@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оркестратор: Антикорозія</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 20px; background-color: #f4f7f6; color: #333; }
+        h1 { color: #2c3e50; text-align: center; }
+        .framework-box { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); max-width: 800px; margin: auto; }
+        #popup { position: fixed; background: #333; color: #fff; padding: 15px; border-radius: 5px; display: none; z-index: 1000; max-width: 300px; }
+        .highlight { background-color: yellow; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <div class="framework-box">
+        <h1>Оркестратор: Антикорозія</h1>
+        <h2>Розумовий простір. Всесвіт як параметр. Зосередься!</h2>
+        <p style="text-align: center; font-size: 0.9em; color: #555;">
+            <em>Ви — головний інженер. і несете повну відповідальність за результати експериментів.---> 🛠 "Я усвідомлюю свою дію! Посміхніться і досліджуйте далі"</em>
+        </p>
+
+        <div id="editor" contenteditable="true" style="border: 1px solid #ccc; padding: 15px; min-height: 200px; border-radius: 5px; background: white;">
+            Виділіть будь-яке слово, щоб дізнатися його суть: корозія, пасивація, ізоляція, стабільність, графіт, танін, безпека.
+        </div>
+    </div>
+
+    <div id="popup"></div>
+
+    <script>
+        const fakeKnowledgeBase = {
+            "корозія": { title: "Корозія", content: "Прагнення металу до оксидного стану. Керується через електрохімічні параметри." },
+            "пасивація": { title: "Пасивація (завжди)", content: "Хімічна реакція з киснем або реагентом, що створює захисну плівку." },
+            "ізоляція": { title: "Ізоляція", content: "Фізичний бар'єр від вологи. Перериває корозійний міст." },
+            "стабільність": { title: "Стабільність", content: "Електрохімічна рівновага. Еквіпотенціальна поверхня, що виключає гальванічні пари." },
+            "графіт": { title: "Графіт", content: "Вуглецевий провідник. Матриця для катодного захисту та вирівнювання потенціалів." },
+            "танін": { title: "Танін", content: "Органічний хелатор. Перетворює активну іржу на інертний таннат заліза." },
+            "безпека": { title: "Безпека дослідника", content: "Обов'язкові ЗІЗ(ЗІЗ — Засоби Індивідуального Захисту): респіратор (від пилу графіту), нітрилові рукавички. Безпека — це частина технологічного процесу." }
+        };
+
+        document.getElementById('editor').addEventListener('mouseup', function() {
+            const selectedText = window.getSelection().toString().toLowerCase().trim();
+            const popup = document.getElementById('popup');
+            if (fakeKnowledgeBase[selectedText]) {
+                popup.innerHTML = `<strong>${fakeKnowledgeBase[selectedText].title}</strong><br>${fakeKnowledgeBase[selectedText].content}`;
+                popup.style.display = 'block';
+                popup.style.left = event.pageX + 'px';
+                popup.style.top = (event.pageY + 10) + 'px';
+            } else {
+                popup.style.display = 'none';
+            }
+        });
+    </script>
+
+    <footer style="margin-top: 50px; padding: 20px; border-top: 1px solid #ddd; font-size: 11px; color: #7f8c8d; text-align: center;">
+        <p><strong>Відмова від відповідальності:</strong> Ви дієте самостійно як дослідник. Портал надано "як є".</p>
+        <p>Для обговорення методології: 
+           <a href="https://www.facebook.com/groups/137607950103368" target="_blank" style="color: #007bff;">
+           Група обговорення (Facebook)
+           </a>
+        </p>
+    </footer>
+
+</body>
+</html>
