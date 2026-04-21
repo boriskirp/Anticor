@@ -15,7 +15,7 @@
 > "Я усвідомлюю свою дію! Посміхніться і досліджуйте далі."
 ### Навігація
 
-[Перейти до Оркестратора](https://boriskirp.github.io/Anticor/)
+[Перейти до Оркестратора на GitHub](https://boriskirp.github.io/Anticor/)
 
 [Обговорення методології у групі Facebook](https://www.facebook.com/groups/137607950103368)
 ---
